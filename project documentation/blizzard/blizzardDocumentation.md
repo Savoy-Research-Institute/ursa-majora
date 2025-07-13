@@ -1,105 +1,193 @@
 Blizzard Console – Project Documentation
 📖 1. Introduction
-Blizzard is the primary handheld controller for the Velma drone system. It is designed to provide versatile, secure, and user-friendly control for drone operations, enabling:
+Blizzard is the primary handheld controller for the Velma drone system, designed to provide secure, versatile, and intuitive control for mission-critical drone operations.
 
-Multi-console compatibility: One Blizzard can connect to multiple drones (one at a time) and vice versa, using dynamic access codes.
+Key capabilities include:
 
-Remote mission execution: Operators can send or receive drones across different locations with seamless handoff between Blizzard consoles.
+Multi-console compatibility: One Blizzard can connect to multiple drones (one at a time), and each drone can connect to multiple Blizzard consoles via dynamic access codes.
 
-Pre-autonomous MVP control: Before full autonomy is implemented, Blizzard enables human operators to guide landing, take-off, and mission execution, with future versions integrating vision-based autonomous landing on ground tags.
+Remote mission execution: Operators at different locations can seamlessly hand off drones between Blizzard consoles.
+
+Pre-autonomy control: Enables human-guided take-off, landing, and mission execution before full autonomy is implemented, with future versions integrating vision-based autonomous landing on ground tags.
 
 🎯 2. Project Goals
-Develop a robust controller capable of mission-critical operations.
+✅ Develop a robust handheld controller for mission-critical operations.
+✅ Implement dynamic security protocols for drone-console authentication.
+✅ Provide advanced interaction features, including:
 
-Implement dynamic security protocols for drone-console authentication.
+Cheatcode entry system
 
-Provide advanced interaction features such as cheatcodes, PID tuning, and dynamic drone prompts.
+PID tuning interface
 
-Integrate real-time data monitoring for safe operations (battery, GPS, orientation, flight data).
+Dynamic execution prompts
+
+✅ Integrate real-time data monitoring for safe operations (battery, GPS, orientation, flight data).
 
 🧑‍🔧 3. Core Design Philosophy
-✔️ Security: Dynamic password authentication between Blizzard and drones.
-✔️ Modularity: Hardware and software scalable for different drone models.
-✔️ Usability: Intuitive menu navigation via keypad and digital volume knob.
-✔️ Interoperability: Ability for hospitals, delivery centers, or operators to share drones seamlessly.
+Security: Dynamic password authentication for Blizzard-drone connections.
+
+Modularity: Hardware and software scalable across different drone models.
+
+Usability: Intuitive keypad and digital encoder-based menu navigation.
+
+Interoperability: Seamless sharing of drones between hospitals, delivery centers, and operators.
 
 🏗️ 4. Hardware Components
 Component	Purpose
 Arduino Nano	Main microcontroller running Blizzard code
-9V Battery + Voltage Divider	Power supply with voltage scaling for safe reading
+9V Battery + Voltage Divider	Power supply with voltage scaled safely for Nano readings
 HC-12 Transceiver	Wireless communication with the drone
 Matrix Keypad	Input interface for menu navigation and cheatcode entry
-Digital Volume Encoder	Scroll and select options, adjust variables, brightness, contrast
-I2C LCD Screen	Display menu, flight data, battery status, user prompts
+Digital Volume Encoder	Scroll/select options, adjust variables, brightness, and contrast
+I2C LCD Screen	Display menu, flight data, battery status, and prompts
 GPS Module	Provides Blizzard’s position for coordination and drone rescue
 Magnetometer	Determines magnetic orientation
-Radio TX (FSi6 X)	Standard RC communication (planned integration)
+Radio TX (FSi6 X)	Planned standard RC communication integration
 Goggles (with gyroscope)	For drone head-tracking in future versions
 
 ⚙️ 5. Software Functionalities
 🔹 5.1 Basic Functions (Part A)
-✅ Hardware initialization (keypad, LCD, encoder, HC-12)
-✅ Basic menu system for navigation
-✅ Real-time battery voltage monitoring with alarms
-✅ Display of flight data (lat, long, altitude, drone UID)
-✅ Communication protocols setup with drone via HC-12
+Hardware initialization: keypad, LCD, encoder, HC-12
+
+Basic menu system for navigation
+
+Real-time battery voltage monitoring with alarms
+
+Display of drone data (latitude, longitude, altitude, UID)
+
+Establishing communication protocols with the drone
 
 🔹 5.2 Advanced Features (Part B)
-✅ Nested dynamic menu system with interactive controls
-✅ Cheatcode system for advanced drone commands
-✅ Access code security with dynamic password updates
-✅ Drone execution prompts for PID tuning, altitude lock, mission commands
-✅ Real-time data streaming from drone to Blizzard with alarms for out-of-range values
-✅ GSM integration (planned) for remote drone instructions
-✅ Bidirectional acknowledgment system for reliable data transfer
+Nested dynamic menu system
+
+Cheatcode input, validation, and execution system
+
+Dynamic password-based security and authentication
+
+Drone execution prompts (e.g. PID tuning, altitude lock, mission commands)
+
+Real-time data streaming with alarms for out-of-range values
+
+Planned GSM integration for remote mission instructions
+
+Bidirectional acknowledgment system for reliable data transfer
 
 🔑 6. Security and Access
-Each Blizzard-console–drone connection is secured with a dynamic password system, updated as needed.
+Dynamic password system securing each Blizzard-drone connection.
 
-Proximity-based pairing prompts ensure user intention before granting access.
+Proximity-based pairing prompts to ensure intentional access.
 
-✈️ 7. Use Case Example
-✔️ Scenario: Aga Khan Hospital sends a drone to KNH.
-✔️ Both sites have Blizzard consoles.
-✔️ Operators authenticate using their Blizzard’s password, command landing, unload, and send the drone back.
+Encrypted communication (planned) to protect transmitted data.
+
+✈️ 7. Example Use Case
+Scenario: Aga Khan Hospital sends a drone to KNH.
+Both hospitals have Blizzard consoles.
+Operators authenticate using their Blizzard’s password, command landing, unload supplies, and send the drone back.
 
 📝 8. Development Strategy
 Phase 1 – Foundational Functions
-
-Hardware interfacing
+Hardware interfacing and initialization
 
 Basic menu and data display
 
-Establish HC-12 communication
+HC-12 communication setup
 
 Phase 2 – Advanced Algorithms & Security
-
 Cheatcode system implementation
 
-Dynamic password and access security
+Dynamic password authentication
 
 Drone execution prompts integration
 
 Bidirectional acknowledgment protocol
 
 Phase 3 – Expansion & Integration
-
 GSM module integration
 
-Autonomous landing/tag detection
+Autonomous landing with tag detection
 
-Goggles head-tracking control
+Head-tracking control via goggles
 
 OTA firmware updates
 
-📂 9. Appendices (To be developed)
+📂 9. Appendices (To be Developed)
 Schematics and wiring diagrams
 
 Pinout tables
 
-Glossary of terms
-
-Full function list with inputs, outputs, and flowcharts
+Full function lists (inputs, outputs, flowcharts)
 
 Troubleshooting guide
+
+Glossary of terms
+
+⚡ Technical Notes Summary
+Passwords: Always required for connection; dynamically updateable.
+
+Voltage divider: Scales 9V battery voltage to 5V for safe Nano reading via analog pin.
+
+Keypad: Matrix input for cheatcodes and menu navigation.
+
+GPS + Magnetometer: Provides Blizzard’s PVT data and orientation for drone rescue and navigation.
+
+Menu System: Always displays battery level, GPS data, altitude, and drone UID in screensaver mode.
+
+Digital Encoder: Scrolls menus, adjusts brightness/contrast/variables, and navigates back or forward via click.
+
+GSM Module: Enables receiving drone mission instructions from remote systems (e.g. hospitals).
+
+Transceiver: HC-12 manages drone communication; requires robust send/receive scripts.
+
+Cheatcodes: Unlock advanced functions not mapped to standard controls; stored within Blizzard and validated for execution.
+
+Battery Management: Provides user alarms for low battery conditions.
+
+Proximity Pairing: Drone prompts connection to Blizzard upon mutual detection.
+
+Execution Prompts: Blizzard sends commands to the drone to execute tasks (e.g. altitude lock, PID tuning), streams real-time data for user monitoring with threshold alarms.
+
+Bidirectional ACK System: Ensures reliable data transfer by implementing acknowledgment requests, responses, retries, and timeouts.
+
+🗂️ 10. Table of Contents Outline
+Introduction
+
+Setup and Configuration
+
+Hardware and software requirements
+
+Installation instructions
+
+Basic Functionality
+
+Powering on, initialization
+
+Navigation interface (Keypad & Encoder)
+
+LCD management
+
+Menu structures
+
+Advanced Features
+
+Cheatcodes
+
+HC-12 communication
+
+Security mechanisms
+
+Integration & Expansion
+
+GSM, goggles, OTA updates
+
+Troubleshooting & Support
+
+Appendices
+
+Schematics
+
+Pinouts
+
+Glossary
+
+References
 
