@@ -1,72 +1,98 @@
-#include <Arduino.h>
 #include "radio.h"
+#include <PPMReader.h> // Include your actual PPM library header
 
-// State variable to track radio power
-bool radioIsOn = false;
+namespace Velma {
+namespace Radio {
 
-// Timing variables for channel reading
-unsigned long previousMillis = 0;
-const unsigned long interval = 50; // Interval in ms
+    static int transistorPin = -1;
+    static bool radioIsOn = false;
 
-// Function to switch the radio on
-void switch_radio_on()
-{
-    if (!radioIsOn)
-    {
-        digitalWrite(radio_transistor_pin, HIGH);
-        radioIsOn = true;
+    static unsigned long previousMillis = 0;
+    static const unsigned long interval = 50;
+
+    // Channel indices
+    enum Channels {
+        THROTTLE = 0,
+        ROLL,
+        PITCH,
+        YAW,
+        SWITCH3WAY_1,
+        POT1,
+        SWITCH3WAY_2,
+        POT2
+    };
+
+    // Channel values
+    static int throttle, roll, pitch, yaw;
+    static int switch3way_1, pot1, switch3way_2, pot2;
+
+    // PPM reader object (adjust pin as per your wiring)
+    static PPMReader ppm(2); // Pin 2 as example
+
+    void init(int pin) {
+        transistorPin = pin;
+        pinMode(transistorPin, OUTPUT);
+        switch_off();
     }
-}
 
-// Function to switch the radio off
-void switch_radio_off()
-{
-    if (radioIsOn)
-    {
-        digitalWrite(radio_transistor_pin, LOW);
-        radioIsOn = false;
+    void switch_on() {
+        if (!radioIsOn && transistorPin != -1) {
+            digitalWrite(transistorPin, HIGH);
+            radioIsOn = true;
+        }
     }
-}
 
-// Reads all radio channels using the PPM library
-void read_radio_allchannels()
-{
-    if (!radioIsOn) return;
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= interval)
-    {
-        previousMillis = currentMillis;
-
-        throttle      = ppm.read_channel(THROTTLE);
-        roll          = ppm.read_channel(ROLL);
-        pitch         = ppm.read_channel(PITCH);
-        yaw           = ppm.read_channel(YAW);
-        switch3way_1  = ppm.read_channel(SWITCH3WAY_1);
-        pot1          = ppm.read_channel(POT1);
-        switch3way_2  = ppm.read_channel(SWITCH3WAY_2);
-        pot2          = ppm.read_channel(POT2);
-
-        // Uncomment for debugging:
-        // Serial.print("Throttle: "); Serial.print(throttle); Serial.print(" ");
-        // Serial.print("Roll: "); Serial.print(roll); Serial.print(" ");
-        // Serial.print("Pitch: "); Serial.print(pitch); Serial.print(" ");
-        // Serial.print("Yaw: "); Serial.print(yaw); Serial.print(" ");
-        // Serial.print("Switch_3way_1: "); Serial.print(switch3way_1); Serial.print(" ");
-        // Serial.print("Pot1: "); Serial.print(pot1); Serial.print(" ");
-        // Serial.print("Switch_3way_2: "); Serial.print(switch3way_2); Serial.print(" ");
-        // Serial.print("Pot2: "); Serial.print(pot2); Serial.println();
+    void switch_off() {
+        if (radioIsOn && transistorPin != -1) {
+            digitalWrite(transistorPin, LOW);
+            radioIsOn = false;
+        }
     }
-}
 
-// Reads only the throttle channel
-int read_throttle()
-{
-    if (!radioIsOn) return 0;
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= interval)
-    {
-        previousMillis = currentMillis;
-        return ppm.read_channel(THROTTLE);
+    bool is_on() {
+        return radioIsOn;
     }
-    return 0;
-}
+
+    void read_all_channels() {
+        if (!radioIsOn) return;
+
+        unsigned long currentMillis = millis();
+        if (currentMillis - previousMillis >= interval) {
+            previousMillis = currentMillis;
+
+            throttle      = ppm.latestValidChannelValue(THROTTLE, 1000);
+            roll          = ppm.latestValidChannelValue(ROLL, 1500);
+            pitch         = ppm.latestValidChannelValue(PITCH, 1500);
+            yaw           = ppm.latestValidChannelValue(YAW, 1500);
+            switch3way_1  = ppm.latestValidChannelValue(SWITCH3WAY_1, 1500);
+            pot1          = ppm.latestValidChannelValue(POT1, 1500);
+            switch3way_2  = ppm.latestValidChannelValue(SWITCH3WAY_2, 1500);
+            pot2          = ppm.latestValidChannelValue(POT2, 1500);
+
+            // Optional debug output
+            /*
+            Serial.print("Throttle: "); Serial.print(throttle); Serial.print(" ");
+            Serial.print("Roll: "); Serial.print(roll); Serial.print(" ");
+            Serial.print("Pitch: "); Serial.print(pitch); Serial.print(" ");
+            Serial.print("Yaw: "); Serial.print(yaw); Serial.print(" ");
+            Serial.print("Switch3way_1: "); Serial.print(switch3way_1); Serial.print(" ");
+            Serial.print("Pot1: "); Serial.print(pot1); Serial.print(" ");
+            Serial.print("Switch3way_2: "); Serial.print(switch3way_2); Serial.print(" ");
+            Serial.print("Pot2: "); Serial.print(pot2); Serial.println();
+            */
+        }
+    }
+
+    int read_throttle() {
+        if (!radioIsOn) return 0;
+
+        unsigned long currentMillis = millis();
+        if (currentMillis - previousMillis >= interval) {
+            previousMillis = currentMillis;
+            throttle = ppm.latestValidChannelValue(THROTTLE, 1000);
+        }
+        return throttle;
+    }
+
+} // namespace Radio
+} // namespace Velma

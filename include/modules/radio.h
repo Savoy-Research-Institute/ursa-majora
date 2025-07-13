@@ -3,36 +3,47 @@
 
 #include <Arduino.h>
 
-// Define the radio transistor control pin externally
-extern const int radio_transistor_pin;
+namespace Velma {
+namespace Radio {
 
-// State variable for radio power
-extern bool radioIsOn;
+    /**
+     * @brief Initialize the radio module pins and state.
+     * 
+     * @param transistor_pin Pin controlling radio power transistor.
+     */
+    void init(int transistor_pin);
 
-// Timing variables for channel reading
-extern unsigned long previousMillis;
-extern const unsigned long interval;
+    /**
+     * @brief Switch the radio module power ON via transistor control.
+     */
+    void switch_on();
 
-// Channel values (should be defined elsewhere or here as needed)
-extern int throttle, roll, pitch, yaw;
-extern int switch3way_1, pot1, switch3way_2, pot2;
+    /**
+     * @brief Switch the radio module power OFF.
+     */
+    void switch_off();
 
-// PPM library object (should be defined in your main sketch or another file)
-extern PPM ppm;
+    /**
+     * @brief Read all radio channels and update internal state.
+     */
+    void read_all_channels();
 
-// Channel indices (define as needed)
-#define THROTTLE      0
-#define ROLL          1
-#define PITCH         2
-#define YAW           3
-#define SWITCH3WAY_1  4
-#define POT1          5
-#define SWITCH3WAY_2  6
-#define POT2          7
+    /**
+     * @brief Read throttle channel value.
+     * 
+     * @return int Throttle channel PWM value.
+     */
+    int read_throttle();
 
-// Function declarations
-void switch_radio_on();
-void switch_radio_off();
-void read_radio_allchannels();
-int read_throttle();
+    /**
+     * @brief Check if radio module is currently powered on.
+     * 
+     * @return true if powered on.
+     * @return false otherwise.
+     */
+    bool is_on();
+
+} // namespace Radio
+} // namespace Velma
+
 #endif // RADIO_H
