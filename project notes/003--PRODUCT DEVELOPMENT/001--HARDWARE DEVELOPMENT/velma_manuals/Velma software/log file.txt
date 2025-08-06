@@ -1,0 +1,20 @@
+this is my log file, under log.1, under velma_training_drones repo
+if I was to start afresh, how would I do it, factoring in everything, right now its very chaotic, 
+and everything everywhere all at once, I need to redo, mapping the schematics alongside the circuitry in real life etc, 
+I need to set and cut my specs, and to have organisation, before I send everything back, this file will be deleted,
+
+
+Ok, what am I doing, building a training drone that I will use to give myself and my team a competitive advantage,
+the drone is to have piloting capabilities via blizzard, the blizzard can choose to transmit data via the radio, 
+or via onboard transcievers, the blizzard can search and rescue the drone, at day or night time, by providing gps to blizzard
+and algorithms, there is turtle mode, the drone can turn by reversing rotation, of two motors, 
+stabilization algorithms via the accelerometer and gyroscope, to aid in flight practise, 
+cruise and autopilot capabilities, to aid in long flight and videography, 
+waypoint system, the drone and blizzard can record position velocity and time data, altitude etc, 
+it can send this data out, go left or right, to both the blizzard and the drone, 
+altitude and gps hold capabilities, barometer and ultrasonic sensor to aid in assisted landing, 
+complex control via parent_console and child_console, and their gyroscopes, and their goggles gyroscopes, 
+    the parent, during training mode will give and revoke control priority via a switch, during flight, the drone does the distinction, 
+    the blizzard profiles, give admin, parent or child access to the drones, and changing the profile midflight can unlock a library of features that wasnt there before, 
+acrobatic, selfleveling and autonomous modes, 
+changeable interface, because the nano reads the channels, it can switch functionalities very easily, 

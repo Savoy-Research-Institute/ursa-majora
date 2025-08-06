@@ -1,0 +1,1 @@
+//this will hold all flight control code, such that the main sketch calls these functions only, and maintains the order of things rather than the implimentation code

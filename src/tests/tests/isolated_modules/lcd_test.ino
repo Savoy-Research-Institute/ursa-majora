@@ -1,0 +1,1 @@
+//https://www.elektor.com/products/iic-i2c-serial-interface-adapter-module 

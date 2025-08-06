@@ -1,0 +1,1 @@
+The documented organisational policy that defines management's commitment, responsibility and accountability for safety.    Safety policy identifies and assigns responsibilities to key safety personnel.

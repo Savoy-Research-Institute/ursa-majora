@@ -1,0 +1,8 @@
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+//communicate using HC12 transcievers, send data, receive data, change baud rates and channels
+
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+//secondary objectives, 
+
+//send and receive acknowledgment,
+    // Example: Cube requesting ACK from Blizzard

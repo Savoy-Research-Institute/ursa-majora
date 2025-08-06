@@ -1,0 +1,1 @@
+a set of processes within the SMS that verify that the organisation meets or exceeds the safety perfomance objectives, and that function symmetrically to determine the effectiveness of safety risk controls through the collection, analysis, and assessment of information
