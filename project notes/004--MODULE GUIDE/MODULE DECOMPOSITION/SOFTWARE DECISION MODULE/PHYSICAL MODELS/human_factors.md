@@ -1,0 +1,3 @@
+# Human Factors Physical Model
+
+This module defines the physical models for human factors including pilot performance, workload, and human-machine interface characteristics. It provides mathematical models for pilot response times, workload assessment, and human error probabilities. The module includes models for different pilot experience levels, operational conditions, and interface designs. It provides data structures and algorithms for calculating human performance, workload management, and interface optimization. The module supports various operational scenarios and can adapt to different pilot characteristics and mission requirements.

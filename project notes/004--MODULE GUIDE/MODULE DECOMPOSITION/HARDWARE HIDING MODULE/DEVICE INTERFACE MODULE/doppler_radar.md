@@ -1,0 +1,3 @@
+# Doppler Radar Device Interface
+
+This module provides hardware abstraction for Doppler radar systems including antenna control, frequency generation, and signal processing hardware. It handles Doppler frequency generation, signal transmission, and return signal processing for ground speed measurement. The module implements radar-specific communication protocols and can handle multiple Doppler radar types and configurations. It provides frequency control, power management, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the Doppler radar set module.

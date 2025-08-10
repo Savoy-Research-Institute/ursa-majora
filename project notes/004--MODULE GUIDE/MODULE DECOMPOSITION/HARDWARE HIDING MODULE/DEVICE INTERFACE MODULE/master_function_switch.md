@@ -1,0 +1,3 @@
+# Master Function Switch Device Interface
+
+This module provides hardware abstraction for master function switch systems including emergency switches, mode selectors, and master control switches. It handles master switch position reading, priority management, and emergency control functions. The module implements switch-specific communication protocols and can handle multiple master switch types and configurations. It provides switch state monitoring, priority control, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the panel module.

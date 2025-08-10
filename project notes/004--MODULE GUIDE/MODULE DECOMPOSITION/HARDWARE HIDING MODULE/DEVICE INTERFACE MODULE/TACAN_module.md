@@ -1,0 +1,3 @@
+# TACAN Module Device Interface
+
+This module provides hardware abstraction for TACAN (Tactical Air Navigation) systems including TACAN receivers, antenna systems, and navigation processing hardware. It handles TACAN signal reception, bearing and distance calculations, and navigation data processing. The module implements TACAN-specific communication protocols and can handle multiple TACAN system types and configurations. It provides bearing calculation, distance measurement, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the TACAN navigation module.

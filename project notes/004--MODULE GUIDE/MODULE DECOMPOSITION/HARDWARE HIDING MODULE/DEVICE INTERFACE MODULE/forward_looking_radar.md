@@ -1,0 +1,3 @@
+# Forward-Looking Radar Device Interface
+
+This module provides hardware abstraction for forward-looking radar systems including antenna control, transmitter/receiver units, and signal processing hardware. It handles radar beam steering, signal generation, and return signal processing for radar systems. The module implements radar-specific communication protocols and can handle multiple radar types and configurations. It provides antenna positioning, power control, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the forward-looking radar module.

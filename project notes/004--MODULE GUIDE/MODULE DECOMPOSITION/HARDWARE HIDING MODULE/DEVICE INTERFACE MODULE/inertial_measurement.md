@@ -1,0 +1,3 @@
+# Inertial Measurement Device Interface
+
+This module provides hardware abstraction for inertial measurement units including gyroscopes, accelerometers, and magnetometers. It handles raw sensor data acquisition, signal processing, and provides standardized interfaces for inertial data. The module implements sensor-specific communication protocols and can handle multiple IMU types and configurations. It provides sensor calibration routines, temperature compensation, and sensor health monitoring. The module abstracts hardware-specific details to provide clean interfaces for the inertial measurement set module.

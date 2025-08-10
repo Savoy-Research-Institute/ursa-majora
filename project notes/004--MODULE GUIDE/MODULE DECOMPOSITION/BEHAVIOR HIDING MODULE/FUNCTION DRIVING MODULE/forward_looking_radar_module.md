@@ -1,0 +1,3 @@
+# Forward-Looking Radar Module
+
+This module manages the forward-looking radar system for target detection, tracking, and terrain mapping. It processes radar returns to identify and track airborne and ground targets, providing range, bearing, and velocity information. The module implements signal processing algorithms for target detection, clutter rejection, and false alarm reduction. It provides target data to the mission system and can operate in multiple modes including air-to-air, air-to-ground, and terrain following. The module includes automatic target tracking and threat assessment capabilities.

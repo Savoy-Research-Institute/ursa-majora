@@ -1,0 +1,3 @@
+# Shipboard Inertial Navigation Device Interface
+
+This module provides hardware abstraction for shipboard inertial navigation systems including GPS receivers, inertial reference units, and navigation sensors. It handles navigation data acquisition, sensor integration, and positioning calculations. The module implements navigation-specific communication protocols and can handle multiple navigation system types and configurations. It provides position calculation, velocity estimation, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the ship inertial navigation module.

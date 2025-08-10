@@ -1,0 +1,3 @@
+# Radar Altimeter Device Interface
+
+This module provides hardware abstraction for radar altimeter systems including altitude measurement hardware and signal processing units. It handles altitude signal generation, return signal processing, and altitude calculation for terrain following and landing operations. The module implements altimeter-specific communication protocols and can handle multiple altimeter types and configurations. It provides altitude calculation, terrain detection, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the radar altimeter module.

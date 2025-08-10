@@ -1,0 +1,3 @@
+# Inertial Measurement Set Module
+
+This module processes raw data from gyroscopes and accelerometers to provide attitude, heading, and motion information. It performs sensor fusion algorithms to combine data from multiple IMU sensors, applies calibration corrections, and filters noise to provide stable orientation and motion data. The module outputs processed inertial data including roll, pitch, yaw angles, angular rates, and linear accelerations. This data is critical for flight control, navigation, and stabilization systems. The module includes sensor health monitoring and fault detection capabilities.

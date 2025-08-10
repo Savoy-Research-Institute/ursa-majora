@@ -1,0 +1,3 @@
+# Aircraft Motion Physical Model
+
+This module defines the physical models for aircraft motion including aerodynamic characteristics, flight dynamics, and control responses. It provides mathematical models for lift, drag, thrust, and weight forces acting on the aircraft. The module includes models for different flight regimes, atmospheric conditions, and aircraft configurations. It provides data structures and algorithms for calculating aircraft performance, stability characteristics, and control effectiveness. The module supports various aircraft types and can adapt to different operational conditions and mission requirements.

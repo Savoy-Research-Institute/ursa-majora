@@ -1,0 +1,3 @@
+# Angle of Attack Device Interface
+
+This module provides hardware abstraction for angle of attack (AOA) sensor systems including AOA vanes, pressure sensors, and AOA calculation hardware. It handles AOA signal acquisition, processing, and calculation for flight control and stall warning systems. The module implements AOA-specific communication protocols and can handle multiple AOA system types and configurations. It provides AOA calculation, stall detection, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the angle of attack module.

@@ -1,0 +1,3 @@
+# Visual Indicators Device Interface
+
+This module provides hardware abstraction for visual indicator systems including LED displays, warning lights, and status indicators. It handles indicator control, brightness adjustment, and display management for various system status indicators. The module implements indicator-specific communication protocols and can handle multiple indicator system types and configurations. It provides brightness control, color management, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the visual indicator module.

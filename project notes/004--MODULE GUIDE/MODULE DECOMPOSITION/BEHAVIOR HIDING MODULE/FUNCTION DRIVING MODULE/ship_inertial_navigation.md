@@ -1,0 +1,3 @@
+# Ship Inertial Navigation Module
+
+This module provides inertial navigation capabilities for the aircraft, combining data from multiple sensors to determine position, velocity, and attitude. It integrates GPS, inertial measurement units, and other navigation sensors to provide accurate navigation solutions. The module performs dead reckoning calculations and can maintain navigation accuracy even during GPS outages. It provides position, velocity, and attitude data to other aircraft systems and can operate in various environmental conditions. The module includes error estimation and can adapt to different navigation requirements based on mission needs.

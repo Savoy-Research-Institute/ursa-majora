@@ -1,0 +1,3 @@
+# Ground Test Module
+
+This module provides comprehensive testing and diagnostic capabilities for aircraft systems during ground operations. It performs system self-tests, sensor calibration, and functional verification of all aircraft subsystems. The module can run automated test sequences, generate test reports, and identify potential issues before flight. It includes built-in test equipment (BITE) functionality and can perform continuous monitoring during ground operations. The module provides detailed diagnostic information to maintenance personnel and can store test results for trend analysis.

@@ -1,0 +1,3 @@
+# Waypoint Information System Device Interface
+
+This module provides hardware abstraction for waypoint information systems including data storage, waypoint management, and navigation planning hardware. It handles waypoint data storage, retrieval, and management for mission planning and navigation. The module implements waypoint-specific communication protocols and can handle multiple waypoint system types and configurations. It provides waypoint storage, retrieval, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the waypoint information system module.

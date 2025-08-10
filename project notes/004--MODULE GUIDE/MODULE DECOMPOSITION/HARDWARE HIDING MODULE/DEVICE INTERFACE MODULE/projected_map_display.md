@@ -1,0 +1,3 @@
+# Projected Map Display Device Interface
+
+This module provides hardware abstraction for projected map display systems including projection units, display screens, and map generation hardware. It handles map data processing, display projection, and map overlay management for navigation and mission planning. The module implements display-specific communication protocols and can handle multiple map display types and configurations. It provides map rendering, overlay management, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the projected map display module.

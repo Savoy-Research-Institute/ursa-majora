@@ -1,0 +1,3 @@
+# Weapons Characteristics Device Interface
+
+This module provides hardware abstraction for weapons characteristics systems including weapons sensors, targeting systems, and weapons management hardware. It handles weapons data acquisition, characteristics analysis, and weapons system management. The module implements weapons-specific communication protocols and can handle multiple weapons system types and configurations. It provides weapons analysis, targeting support, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the weapons characteristics module.

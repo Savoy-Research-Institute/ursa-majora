@@ -1,0 +1,3 @@
+# Weapon Behavior Physical Model
+
+This module defines the physical models for weapon behavior including trajectory calculations, guidance characteristics, and weapon effects. It provides mathematical models for weapon flight paths, guidance algorithms, and terminal effects. The module includes models for different weapon types, guidance modes, and environmental conditions. It provides data structures and algorithms for calculating weapon performance, accuracy, and effectiveness. The module supports various weapon systems and can adapt to different mission requirements and target characteristics.

@@ -1,0 +1,3 @@
+# Weapons Release System Device Interface
+
+This module provides hardware abstraction for weapons release mechanisms including electrical and mechanical release systems. It handles actuator control, position feedback, and safety interlock management for release mechanisms. The module implements hardware-specific control protocols and can handle multiple release system types and configurations. It provides position monitoring, force feedback, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the weapons release system module.

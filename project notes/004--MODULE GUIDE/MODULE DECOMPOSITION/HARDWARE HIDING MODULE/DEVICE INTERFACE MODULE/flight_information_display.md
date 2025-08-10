@@ -1,0 +1,3 @@
+# Flight Information Display Device Interface
+
+This module provides hardware abstraction for flight information display systems including primary flight displays, multi-function displays, and status screens. It handles flight data processing, display formatting, and information presentation for pilot awareness. The module implements display-specific communication protocols and can handle multiple display types and configurations. It provides data formatting, display management, and system health monitoring capabilities. The module abstracts hardware-specific details to provide clean interfaces for the flight information display module.
